@@ -32,7 +32,7 @@
 					{
 						className: props.className,  // Class name is generated using the block's name prefixed with wp-block-, replacing the / namespace separator with a single -.
 					},
-					'Static block example.-Shuvy-block new' // Block content
+					'Static block example.--block new' // Block content
 				);
 			},
 
@@ -43,7 +43,7 @@
 					{
 						className: props.className,  // Class name is generated using the block's name prefixed with wp-block-, replacing the / namespace separator with a single -.
 					},
-					'Static block example.-Shuvy-block new' // Block content
+					'Static block example.--block new' // Block content
 				);
 			},
 		}

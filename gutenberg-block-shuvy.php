@@ -33,3 +33,27 @@ function mdlr_static_block_example_backend_enqueue() {
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'mdlr_static_block_example_backend_enqueue' );
+
+
+
+
+	function mdlr_editable_block_example_backend_enqueue() {
+		// Scripts.
+		wp_enqueue_script(
+			'mdlr-editable-block-example-backend-script', // Unique handle.
+			plugins_url( 'block-editable/block.js', __FILE__ ), // Block.js: We register the block here.
+			array( 'wp-blocks', 'wp-i18n', 'wp-element' ), // Dependencies, defined above.
+			filemtime( plugin_dir_path( __FILE__ ) . 'block-editable/block.js' ) // filemtime — Gets file modification time.
+		);
+
+	// Styles.
+	// wp_enqueue_style(
+	// 	'mdlr_block_editable', // Handle.
+	// 	plugins_url( 'block_editable/editor.css', __FILE__ ), // Block editor CSS.
+	// 	array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
+	// 	filemtime( plugin_dir_path( __FILE__ ) . 'block_editable/editor.css' ) // filemtime — Gets file modification time.
+	// );
+} // End function mdlr_block_editable().
+
+// Hook: Frontend assets.
+add_action( 'enqueue_block_editor_assets', 'mdlr_editable_block_example_backend_enqueue' );
